@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+    android:id="@+id/shimmerFrameLayout"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:text="@{data.full_name}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/skeleton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="TextView" />
+
+            <View
+                android:id="@+id/tvBody"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/skeleton"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:text="@{data.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="TextView" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBody" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

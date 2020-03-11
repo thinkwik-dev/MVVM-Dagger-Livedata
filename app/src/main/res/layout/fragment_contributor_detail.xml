@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAvtar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/hello_blank_fragment"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/hello_blank_fragment" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFollowFollowers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/tvFullName"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toBottomOf="@+id/tvFullName"
+        tools:text="@string/hello_blank_fragment" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/tvFullName"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toBottomOf="@+id/tvFollowFollowers"
+        tools:text="@string/hello_blank_fragment" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRepoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:background="@color/light_gray"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAvtar"
+        android:text="Repositories" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvData"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepoTitle"
+        tools:itemCount="4"
+        tools:listitem="@layout/row_repo" />
+    <include
+        android:id="@+id/shimmerRepo"
+        layout="@layout/skeleton_repo"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tvRepoTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepoTitle" />
+
+    <include
+        android:id="@+id/shimmerOwner"
+        layout="@layout/skeleton_owner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/tvRepoTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

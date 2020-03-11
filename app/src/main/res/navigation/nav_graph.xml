@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.jinesh.mpokket.modules.search.view.SearchRepoFragment"
+        android:label="Search Repository"
+        tools:layout="@layout/fragment_search_result" >
+
+        <action
+            android:id="@+id/action_search_detail"
+            app:destination="@id/repoDetailFragment"
+            app:enterAnim="@anim/fragment_close_enter" />
+        <argument
+            android:name="owner"
+            app:argType="com.jinesh.mpokket.entity.Owner" />
+    </fragment>
+    <fragment
+        android:id="@+id/repoDetailFragment"
+        android:name="com.jinesh.mpokket.modules.repodetail.view.RepositoryDetailFragment"
+        tools:layout="@layout/fragment_repo_detail"
+        android:label="Repository Details"
+        >
+        <action
+            android:id="@+id/action_ownerDetail_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:exitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/contributorDetail"
+            app:destination="@id/contributorDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contributorDetailFragment"
+        android:name="com.jinesh.mpokket.modules.contributor.view.ContributorDetailFragment"
+        tools:layout="@layout/fragment_contributor_detail"
+        android:label="Contributor Detail" >
+        <action
+            android:id="@+id/action_search_detail"
+            app:destination="@id/repoDetailFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_enter"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+
+</navigation>

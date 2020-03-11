@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAvtar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_launcher_background"
+        android:text="@string/hello_blank_fragment"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUrls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvFullName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/ivAvtar"
+        app:layout_constraintStart_toStartOf="@+id/ivAvtar"
+        app:layout_constraintTop_toBottomOf="@+id/ivAvtar"
+        tools:text="@string/hello_blank_fragment" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/hello_blank_fragment" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/tvFullName"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toBottomOf="@+id/tvFullName"
+        tools:text="@string/hello_blank_fragment" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUrls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/green"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/tvFullName"
+        app:layout_constraintStart_toEndOf="@+id/ivAvtar"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        tools:text="@string/hello_blank_fragment" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContributorTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:background="@color/light_gray"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        android:text="Contributors" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvData"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContributorTitle"
+        tools:itemCount="4"
+        tools:listitem="@layout/row_repo" />
+
+
+    <include
+        android:id="@+id/incShimmer"
+        layout="@layout/skeleton_repo"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tvContributorTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContributorTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

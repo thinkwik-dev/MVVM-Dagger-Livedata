@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/one"
+        android:title="Stars"/>
+
+    <item
+        android:id="@+id/two"
+        android:title="Forks"/>
+
+    <item
+        android:id="@+id/three"
+        android:title="Watchers"/>
+    <item
+        android:id="@+id/four"
+        android:title="Size"/>
+
+</menu>
